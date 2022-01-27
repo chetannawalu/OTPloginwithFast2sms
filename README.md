@@ -1,2 +1,2 @@
 # OTPloginwithFast2sms
-Small Python program for login via OTP using Fsat2Sms service.
+Small Python program for login via OTP using Fast2Sms service.
