@@ -1,0 +1,27 @@
+import random
+import requests
+Name=str(input("Enter your name  "))
+Num=(input("Enter your number "))
+OTP = random.randint(1111,9999)
+otp=OTP
+url = "https://www.fast2sms.com/dev/bulk"
+payload = f"sender_id=FSTSMS&message=Your OTP is: &language=english&route=p&numbers={Num}"
+headers = {'authorization': "YOUR_AUTHORIZATION_ID_HERE_FROM_FAST2SMS",
+    'Content-Type': "application/x-www-form-urlencoded",
+    'Cache-Control': "no-cache",
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+check=int(input("Enter OTP "))
+try:
+    if(otp==check):
+        print("OTP matched")
+        print("Number successfully registered")
+        #Data.extend([Name,Num])
+        #Data[Name]=Num
+    else:
+        print("OTP not matched")
+except:
+    print("error sending message")
+
+    
